@@ -24,9 +24,11 @@ int main()
 	struct tm buf;
 	time_t t = time(NULL);
 	localtime_s(&buf, &t);
+	int sum = 0;
 	for (int i = 0; i < length; i++)
 	{
-		cout << array[buf.tm_mday%length][i] << ' ';
+		sum += array[buf.tm_mday%length][i];
 	}
+	cout << sum << endl;
 }
 
